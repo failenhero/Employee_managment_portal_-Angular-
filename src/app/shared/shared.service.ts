@@ -29,8 +29,8 @@ export class SharedService {
     return this.http.put(this.DepartmentAPIUrl, val)
   }
 
-  deleteDepartment(id: number) {
-    return this.http.delete(`${this.DepartmentAPIUrl}/${id}`)
+  deleteDepartment(id: any) {
+    return this.http.delete(`http://localhost:5000/api/department/${id}`)
   }
 
   getEmpList(): Observable<any[]> {
