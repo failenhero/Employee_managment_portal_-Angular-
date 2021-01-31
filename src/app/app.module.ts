@@ -11,6 +11,11 @@ import { ShowDepComponent } from './department/show-dep/show-dep.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { AddEditEmpComponent } from './employee/add-edit-emp/add-edit-emp.component';
 import { ShowEmpComponent } from './employee/show-emp/show-emp.component';
+import { DepfilterByIdPipe } from './shared/pipes/dep-Filter-by-id.pipe';
+import { DepFilterByNamePipe } from './shared/pipes/dep-filter-by-name.pipe';
+import { EmpFilterByIdPipe } from './shared/pipes/emp-filter-by-id.pipe';
+import { EmpFilterByNamePipe } from './shared/pipes/emp-filter-by-name.pipe';
+import { EmpFilterByDepPipe } from './shared/pipes/emp-filter-by-dep.pipe';
 
 
 @NgModule({
@@ -21,7 +26,12 @@ import { ShowEmpComponent } from './employee/show-emp/show-emp.component';
     ShowDepComponent,
     EmployeeComponent,
     AddEditEmpComponent,
-    ShowEmpComponent
+    ShowEmpComponent,
+    DepfilterByIdPipe,
+    DepFilterByNamePipe,
+    EmpFilterByIdPipe,
+    EmpFilterByNamePipe,
+    EmpFilterByDepPipe
   ],
   imports: [
     BrowserModule,

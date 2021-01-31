@@ -1,2 +1,21 @@
-<p>add-edit-dep works!</p>
-<p> Add< yopta</p>
+<div class="form-group row">
+
+  <label class="col-sm-2 col-form-label">
+    Department name
+  </label>
+
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="DepartmentName"
+      placeholder="Enter department name">
+  </div>
+</div>
+
+<button class="btn btn-primary"
+  (click)="addDepartment()" *ngIf="dep.DepartmentID == 0">
+  Add new department
+</button>
+
+<button class="btn btn-primary"
+  (click)="editDepartment()" *ngIf="dep.DepartmentID !== 0">
+  Update
+</button>

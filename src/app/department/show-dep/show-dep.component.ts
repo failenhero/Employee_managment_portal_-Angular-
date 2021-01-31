@@ -14,6 +14,9 @@ export class ShowDepComponent implements OnInit {
   activateAddEditDepComponent: boolean = false;
   dep!: Department;
 
+  departmentIdFilter: string = '';
+  departmentNameFilter: string = '';
+
   constructor(
     private sharedService: SharedService,
   ) { }
@@ -37,7 +40,7 @@ export class ShowDepComponent implements OnInit {
     this.activateAddEditDepComponent = true;
   }
 
-  editDepartmentClick(item: Department){
+  editDepartmentClick(item: Department) {
     this.dep = item;
     console.log(item)
     this.modalTitle = 'Edit this department';
@@ -49,6 +52,15 @@ export class ShowDepComponent implements OnInit {
     this.refreshDepList();
   }
 
+  deleteDepartmentClick(item: Department): void {
+    if(confirm('Are you sure you want to delete this department?')){
+      this.dep = item;
+      const id = this.dep.DepartmentID;
+      this.sharedService.deleteDepartment(id).subscribe(data => {
+        this.refreshDepList();
+      })
+    }
+  }
 
 
 }

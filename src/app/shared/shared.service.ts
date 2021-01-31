@@ -30,7 +30,7 @@ export class SharedService {
   }
 
   deleteDepartment(id: any) {
-    return this.http.delete(`http://localhost:5000/api/department/${id}`)
+    return this.http.delete(`${this.DepartmentAPIUrl}/${id}`)
   }
 
   getEmpList(): Observable<any[]> {
@@ -49,8 +49,8 @@ export class SharedService {
     return this.http.delete(`${this.EmployeeAPIUrl}/${id}`)
   }
 
-  uploadPhoto(val: string) {
-    return this.http.post(this.EmployeeAPIUrl + 'SaveFile', val)
+  uploadPhoto(val: any) {
+    return this.http.post(this.APIUrl+'/Employee/SaveFile',val)
   }
 
   getAllDepartmentNames(): Observable<any[]> {
